@@ -14,6 +14,7 @@
 		12ECD7801CC7A781003C657B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12ECD77E1CC7A781003C657B /* LaunchScreen.storyboard */; };
 		12ECD78B1CC7A781003C657B /* ruleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ECD78A1CC7A781003C657B /* ruleTests.swift */; };
 		12ECD7961CC7A781003C657B /* ruleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ECD7951CC7A781003C657B /* ruleUITests.swift */; };
+		12ECD7A41CC7AB5E003C657B /* card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ECD7A31CC7AB5E003C657B /* card.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		12ECD7911CC7A781003C657B /* ruleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ruleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		12ECD7951CC7A781003C657B /* ruleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ruleUITests.swift; sourceTree = "<group>"; };
 		12ECD7971CC7A781003C657B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12ECD7A31CC7AB5E003C657B /* card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				12ECD7751CC7A781003C657B /* AppDelegate.swift */,
 				12ECD7771CC7A781003C657B /* ViewController.swift */,
 				12ECD7791CC7A781003C657B /* Main.storyboard */,
+				12ECD7A31CC7AB5E003C657B /* card.swift */,
 				12ECD77C1CC7A781003C657B /* Assets.xcassets */,
 				12ECD77E1CC7A781003C657B /* LaunchScreen.storyboard */,
 				12ECD7811CC7A781003C657B /* Info.plist */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12ECD7A41CC7AB5E003C657B /* card.swift in Sources */,
 				12ECD7781CC7A781003C657B /* ViewController.swift in Sources */,
 				12ECD7761CC7A781003C657B /* AppDelegate.swift in Sources */,
 			);
