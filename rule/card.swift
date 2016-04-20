@@ -10,11 +10,14 @@ import UIKit
 
 class card  {
    
-   var cardImage: UIImage
+    var contents: NSString
+    var choosen: Bool
+    var matched: Bool
    
-   
-   init(image: UIImage) {
-      self.cardImage = image
-   }
+    init(contents: NSString, choosen: Bool, matched: Bool) {
+        self.contents = contents
+        self.choosen = choosen
+        self.matched = matched
+    }
    
 }
