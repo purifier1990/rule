@@ -8,16 +8,10 @@
 
 import UIKit
 
-class card  {
+class Card  {
    
-    var contents: NSString
-    var choosen: Bool
-    var matched: Bool
-   
-    init(contents: NSString, choosen: Bool, matched: Bool) {
-        self.contents = contents
-        self.choosen = choosen
-        self.matched = matched
-    }
+    var contents: NSString? = nil
+    var choosen = false
+    var matched = false
    
 }
