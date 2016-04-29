@@ -6,12 +6,19 @@
 //  Copyright © 2016 wenyuzhao. All rights reserved.
 //
 
-import UIKit
-
 class Card  {
    
-    var contents: NSString? = nil
+    var contents: String? = nil
     var choosen = false
     var matched = false
    
+   func match(otherCards:Array<Card>) -> Int {
+      var score = 0
+      for card in otherCards {
+         if self.contents == card.contents {
+            score = 1
+         }
+      }
+      return score
+   }
 }
