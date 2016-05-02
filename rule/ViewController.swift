@@ -10,19 +10,27 @@ import UIKit
 
 class ViewController: UIViewController {
 
-   var game = CardMatchingGame().init(count:self.cardButtons.count, deck:self.createDeck()!)
-   var deck:Deck
+    var game:CardMatchingGame
+   var deck:Deck = Deck.init()
 
    @IBOutlet var cardButtons: [UIButton]!
-   
-   init() {
-      self.deck = self.createDeck()!
-      game = CardMatchingGame.init(count:self.cardButtons.count, deck:self.createDeck()!)
-   }
-   
-   required init?(coder aDecoder: NSCoder) {
-      
-   }
+
+    init() {
+        game = CardMatchingGame.init(count:16, deck:deck)
+        //deck = createDeck()!
+        super.init(nibName: nil, bundle: nil)
+        
+    }
+    
+    required convenience init?(coder aDecoder: NSCoder) {
+        self.init()
+    }
+    
+//   init() {
+////      self.deck = self.createDeck()!
+//    super.init()
+//    game = CardMatchingGame.init(count:cardButtons.count, deck:createDeck()!)
+//   }
    
    func createDeck() -> Deck? {
       return nil

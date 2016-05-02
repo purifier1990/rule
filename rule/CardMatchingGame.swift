@@ -13,7 +13,7 @@ class CardMatchingGame {
    var score:Int = 0
    
    init(count:Int, deck:Deck) {
-      for _ in 0...count {
+      for _ in 1...count {
          let card = deck.drawRandomCard()
          self.cards.append(card)
       }

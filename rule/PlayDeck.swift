@@ -12,11 +12,11 @@ class PlayingCardDeck: Deck {
    override init() {
    super.init()
       for suit in PlayCard.validSuits() {
-         for var rank = 1; rank <= PlayCard.maxRank(); rank+=1 {
+         for rank in 1...PlayCard.maxRank() {
             let card = PlayCard()
             card.suit = suit
             card.rank = rank
-            self.addCard(card)
+            addCard(card)
          }
       }
    }
