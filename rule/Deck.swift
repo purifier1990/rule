@@ -9,7 +9,11 @@
 import Foundation
 
 class Deck {
-   var cards:Array<Card> = Array()
+   var cards:Array<Card>
+   
+   init() {
+      cards = Array()
+   }
    
    func addCard(card:Card, atTop:Bool) {
       if atTop {

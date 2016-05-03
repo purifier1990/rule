@@ -9,7 +9,7 @@
 class Card  {
    
     var contents: String? = nil
-    var choosen = false
+    var choosen = true
     var matched = false
    
    func match(otherCards:Array<Card>) -> Int {

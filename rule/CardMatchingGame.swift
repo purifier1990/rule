@@ -9,10 +9,15 @@
 import Foundation
 
 class CardMatchingGame {
-   var cards:Array<Card> = []
+   var cards:Array<Card>
    var score:Int = 0
    
-   init(count:Int, deck:Deck) {
+   init() {
+      cards = Array()
+   }
+   
+   convenience init(count:Int, deck:Deck) {
+      self.init()
       for _ in 1...count {
          let card = deck.drawRandomCard()
          self.cards.append(card)

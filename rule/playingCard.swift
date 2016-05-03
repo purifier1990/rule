@@ -7,30 +7,33 @@
 //
 
 class PlayCard: Card {
-    var suit: String {
-        set {
-            if PlayCard.validSuits().contains(newValue) {
-                self.suit = newValue
-            }
-        }
-        get {
-            if self.suit.isEmpty {
-                return "?"
-            } else {
-                return self.suit
-            }
-        }
-    }
-    var rank: Int {
-        set {
-            if newValue <= PlayCard.maxRank() {
-                self.rank = newValue
-            }
-        }
-        get {
-            return self.rank
-        }
-    }
+   var suit: String = ""
+   var rank: Int = 0
+   
+//    var suit_c: String {
+//        set {
+//            if PlayCard.validSuits().contains(newValue) {
+//                self.suit = newValue
+//            }
+//        }
+//        get {
+//            if self.suit.isEmpty {
+//                return "?"
+//            } else {
+//                return self.suit
+//            }
+//        }
+//    }
+//    var rank: Int {
+//        set {
+//            if newValue <= PlayCard.maxRank() {
+//                self.rank = newValue
+//            }
+//        }
+//        get {
+//            return self.rank
+//        }
+//    }
    
    override var contents: String? {
       get {
@@ -39,7 +42,7 @@ class PlayCard: Card {
          return card + self.suit
       }
       set {
-         
+         self.contents = newValue
       }
    }
    

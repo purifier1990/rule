@@ -10,27 +10,18 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var game:CardMatchingGame
-   var deck:Deck = Deck.init()
+   var game:CardMatchingGame?
+   var deck:Deck?
 
    @IBOutlet var cardButtons: [UIButton]!
 
-    init() {
-        game = CardMatchingGame.init(count:16, deck:deck)
-        //deck = createDeck()!
-        super.init(nibName: nil, bundle: nil)
-        
-    }
-    
-    required convenience init?(coder aDecoder: NSCoder) {
-        self.init()
-    }
-    
-//   init() {
-////      self.deck = self.createDeck()!
-//    super.init()
-//    game = CardMatchingGame.init(count:cardButtons.count, deck:createDeck()!)
-//   }
+   init() {
+      super.init(nibName: nil, bundle: nil)
+   }
+   
+   required init?(coder aDecoder: NSCoder) {
+      super.init(coder: aDecoder)
+   }
    
    func createDeck() -> Deck? {
       return nil
@@ -39,7 +30,8 @@ class ViewController: UIViewController {
    override func viewDidLoad() {
       super.viewDidLoad()
       // Do any additional setup after loading the view, typically from a nib.
-      
+      self.game = CardMatchingGame.init(count:cardButtons.count, deck:createDeck()!)
+      updateUI()
    }
 
    override func didReceiveMemoryWarning() {
@@ -50,7 +42,7 @@ class ViewController: UIViewController {
    func updateUI() {
       for cardButton in cardButtons {
          let cardIndex = cardButtons.indexOf(cardButton)
-         let card = game.cardAtIndex(cardIndex!)
+         let card = game!.cardAtIndex(cardIndex!)
          cardButton.setTitle(self.titleForCard(card!) as String, forState:UIControlState.Normal)
          cardButton.setBackgroundImage(self.backgroundImageForCard(card!), forState: UIControlState.Normal)
          cardButton.enabled = !card!.matched
@@ -59,7 +51,8 @@ class ViewController: UIViewController {
    
    @IBAction func touchButton(sender: UIButton) {
       let cardIndex = cardButtons.indexOf(sender)
-      game.chooseCardAtIndex(cardIndex!)
+      game!.chooseCardAtIndex(cardIndex!)
+      updateUI()
    }
 
    func titleForCard(card:Card) -> NSString {
