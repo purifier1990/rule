@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "rule/CardMatchingGame.swift"
-            timestampString = "483953715.627604"
+            filePath = "rule/card.swift"
+            timestampString = "484046715.859133"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "chooseCardAtIndex(_:)"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "match(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "rule/ViewController.swift"
-            timestampString = "483954388.287336"
+            filePath = "rule/CardMatchingGame.swift"
+            timestampString = "484046772.681697"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "touchButton(_:)"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "chooseCardAtIndex(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

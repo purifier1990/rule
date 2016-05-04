@@ -38,27 +38,19 @@ class CardMatchingGame {
    let penalty = 2
    
    func chooseCardAtIndex(index:Int) {
-      if let card = self.cardAtIndex(index) {
+      if let card = self.cardAtIndex(index) as? PlayCard {
          if !card.matched {
-            if card.choosen {
-               card.choosen = false
-            } else {
-               for otherCard in self.cards {
-                  if otherCard.choosen && !otherCard.matched {
-                     let matchScore = card.match([otherCard])
-                     if matchScore > 0 {
-                        self.score += matchScore * bounus
-                        card.matched = true
-                        otherCard.matched = true
-                     } else {
-                        self.score -= penalty
-                        otherCard.choosen = false
-                     }
-                     break
-                  }
+            var flag = false
+            for otherCard in self.cards as! Array<PlayCard> {
+               if !otherCard.matched && card.rank <= otherCard.rank {
+                  flag = true
+               } else {
+                  flag = false
                }
-               self.score -= 1
-               card.choosen = true
+            }
+            if flag {
+               card.choosen = false
+               card.matched = true
             }
          }
       }
