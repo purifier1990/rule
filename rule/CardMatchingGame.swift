@@ -40,12 +40,11 @@ class CardMatchingGame {
    func chooseCardAtIndex(index:Int) {
       if let card = self.cardAtIndex(index) as? PlayCard {
          if !card.matched {
-            var flag = false
+            var flag = true
             for otherCard in self.cards as! Array<PlayCard> {
-               if !otherCard.matched && card.rank <= otherCard.rank {
-                  flag = true
-               } else {
+               if !otherCard.matched && card.rank > otherCard.rank {
                   flag = false
+                  break
                }
             }
             if flag {
