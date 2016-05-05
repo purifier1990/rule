@@ -28,10 +28,13 @@ class ViewController: UIViewController {
    }
    
    override func viewDidLoad() {
+    
       super.viewDidLoad()
       // Do any additional setup after loading the view, typically from a nib.
       self.game = CardMatchingGame.init(count:cardButtons.count, deck:createDeck()!)
       updateUI()
+      let nc = NSNotificationCenter.defaultCenter()
+    nc.addObserver(self, selector: #selector(ViewController.updateDeck(_:)), name: "needUpdateDeck", object: nil)
    }
 
    override func didReceiveMemoryWarning() {
@@ -39,14 +42,27 @@ class ViewController: UIViewController {
       // Dispose of any resources that can be recreated.
    }
    
+    func updateDeck(notification:NSNotification) {
+        self.game = CardMatchingGame.init(count:cardButtons.count, deck:createDeck()!)
+        updateUI()
+    }
+    
    func updateUI() {
+      var isDone = true
       for cardButton in cardButtons {
          let cardIndex = cardButtons.indexOf(cardButton)
          let card = game!.cardAtIndex(cardIndex!)
          cardButton.setTitle(self.titleForCard(card!) as String, forState:UIControlState.Normal)
          cardButton.setBackgroundImage(self.backgroundImageForCard(card!), forState: UIControlState.Normal)
          cardButton.enabled = !card!.matched
+        if !card!.matched {
+            isDone = false
+        }
       }
+     if isDone {
+        let nc = NSNotificationCenter.defaultCenter()
+        nc.postNotificationName("needUpdateDeck", object: nil)
+     }
    }
    
    @IBAction func touchButton(sender: UIButton) {

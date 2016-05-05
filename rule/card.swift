@@ -11,7 +11,7 @@ class Card  {
     var contents: String? = nil
     var choosen = true
     var matched = false
-   
+    
    func match(otherCards:Array<Card>) -> Int {
       var score = 0
       for card in otherCards {
