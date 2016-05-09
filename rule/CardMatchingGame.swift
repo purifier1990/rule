@@ -34,8 +34,8 @@ class CardMatchingGame {
       }
    }
    
-   let bounus = 4
-   let penalty = 2
+//   let bounus = 4
+//   let penalty = 2
    
    func chooseCardAtIndex(index:Int, byRule rule:Int) {
       if let card = self.cardAtIndex(index) as? PlayCard {
@@ -54,12 +54,12 @@ class CardMatchingGame {
                   card.matched = true
                }
             case 2:
-               if card.rank == 2 || card.rank == 3 || card.rank == 5 || card.rank == 7 || card.rank == 11 || card.rank == 13 {
+               if Utils.isPrime(card) {
                   card.choosen = false
                   card.matched = true
                }
             case 3:
-               if index == 2 || index == 6 || index == 10 || index == 14 {
+               if Utils.isThirdCard(index) {
                   card.choosen = false
                   card.matched = true
                }

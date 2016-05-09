@@ -10,31 +10,6 @@ class PlayCard: Card {
    var suit: String = ""
    var rank: Int = 0
    
-//    var suit_c: String {
-//        set {
-//            if PlayCard.validSuits().contains(newValue) {
-//                self.suit = newValue
-//            }
-//        }
-//        get {
-//            if self.suit.isEmpty {
-//                return "?"
-//            } else {
-//                return self.suit
-//            }
-//        }
-//    }
-//    var rank: Int {
-//        set {
-//            if newValue <= PlayCard.maxRank() {
-//                self.rank = newValue
-//            }
-//        }
-//        get {
-//            return self.rank
-//        }
-//    }
-   
    override var contents: String? {
       get {
          var rankStrings = PlayCard.rankStrings()
@@ -58,20 +33,5 @@ class PlayCard: Card {
    
    class func maxRank() -> Int {
       return PlayCard.rankStrings().count - 1
-   }
-   
-   func match(otherCards: Array<PlayCard>) -> Int {
-      var score = 0
-      if otherCards.count == 1 {
-         if let card = otherCards.first {
-            let otherCard = card
-            if self.suit == otherCard.suit {
-               score = 1
-            } else if self.rank == otherCard.rank {
-               score = 4
-            }
-         }
-      }
-      return score;
    }
 }
